@@ -1,4 +1,6 @@
 using AutoGarageAPI.Data;
+using AutoGarageAPI.Interfaces;
+using AutoGarageAPI.Repositories;
 using AutoGarageAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +12,8 @@ builder.Services.AddDbContext<GarageDbContext>(options =>
     options.UseSqlite("Data Source=autogarage.db"));
 
 builder.Services.AddScoped<GarageReportService>();
+
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 
 builder.Services.AddOpenApi();
 
