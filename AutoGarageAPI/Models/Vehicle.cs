@@ -10,7 +10,7 @@ public class Vehicle
 
     public string PlateNumber { get; set; } = string.Empty;
 
-    public int UserId { get; set; }
+    public int? UserId { get; set; }
 
     public User? User { get; set; }
 }
